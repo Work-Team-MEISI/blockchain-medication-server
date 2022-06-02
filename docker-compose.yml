@@ -1,0 +1,15 @@
+# Use postgres/example user/password credentials
+version: '3.1'
+
+services:
+
+  postgres:
+    container_name: blockchain-medication-server
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: blockchain-medication-server
+    ports:
+      - "5555:5432"
