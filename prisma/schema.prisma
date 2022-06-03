@@ -24,3 +24,15 @@ model UserEntity {
 
   @@map("users")
 }
+
+model MedicationEntity {
+  medicationId String   @id @default(uuid())
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  signature String @unique
+  alias     String
+  basePrice Float
+
+  @@map("medications")
+}
