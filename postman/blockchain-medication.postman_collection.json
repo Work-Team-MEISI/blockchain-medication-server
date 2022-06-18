@@ -1,0 +1,454 @@
+{
+	"info": {
+		"_postman_id": "707de082-6f00-4f6d-a4c0-40632161d96a",
+		"name": "blockchain-medication",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17827948"
+	},
+	"item": [
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "__default",
+					"item": [
+						{
+							"name": "fetch-users",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/users",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"users"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "fetch-user",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/users/bbef17c5-891b-416b-beed-79927a827e36",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"users",
+										"bbef17c5-891b-416b-beed-79927a827e36"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "authentication",
+					"item": [
+						{
+							"name": "sign-up",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"ttv2\",\r\n    \"email\": \"ttv2@ttv2.com\",\r\n    \"password\": \"ttv2\",\r\n    \"firstName\": \"ttv2\",\r\n    \"lastName\": \"ttv2\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/users/authentication/sign-up",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"users",
+										"authentication",
+										"sign-up"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "sign-in",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"ttv1@ttv1.com\",\r\n    \"password\": \"ttv1\"\r\n}   ",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/users/authentication/sign-in",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"users",
+										"authentication",
+										"sign-in"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "sign-out",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJjODgyNGRhMy04ZDBlLTRhZjEtYWJmNC04YTY5NWVhZjg1N2QiLCJlbWFpbCI6InR0djFAdHR2MS5jb20iLCJpYXQiOjE2NTU0NzUzODcsImV4cCI6MTY1NTU2MTc4N30.NM4KcK_ph2dMsTRiLrOTNABvF58jbqj88THN_oK_n7g",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "localhost:3000/users/authentication/sign-out",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"users",
+										"authentication",
+										"sign-out"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "refresh-token",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJjODgyNGRhMy04ZDBlLTRhZjEtYWJmNC04YTY5NWVhZjg1N2QiLCJlbWFpbCI6InR0djFAdHR2MS5jb20iLCJpYXQiOjE2NTQxODg5NjAsImV4cCI6MTY1NDI3NTM2MH0.JxAOGAE6e68veGwtqv8iKj686sr5yi40-Lu0uR31Njc",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "localhost:3000/users/authentication/refresh-token",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"users",
+										"authentication",
+										"refresh-token"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "recipes",
+			"item": [
+				{
+					"name": "create-recipe",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJjODgyNGRhMy04ZDBlLTRhZjEtYWJmNC04YTY5NWVhZjg1N2QiLCJlbWFpbCI6InR0djFAdHR2MS5jb20iLCJpYXQiOjE2NTU1NzgxODcsImV4cCI6MTY1NTY2NDU4N30.q1uBPXJWgf10NtIGfmVr35j6-NzHF0ZklQTpOVQmgTA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\": \"c8824da3-8d0e-4af1-abf4-8a695eaf857d\",\r\n    \"citizenId\": \"f3738c62-cc2c-492d-99dc-cb9b505a65af\",\r\n    \"medications\": [\r\n        \"34d89ed7-1a45-42d8-bc8b-c9a92066a40e\",\r\n        \"34d89ed7-1a45-42d8-bc8b-c9a92066a40e\",\r\n        \"34d89ed7-1a45-42d8-bc8b-c9a92066a40e\"\r\n    ],\r\n    \"createdAt\": \"05-12-1995\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/recipes",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"recipes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "fetch-recipe",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJjODgyNGRhMy04ZDBlLTRhZjEtYWJmNC04YTY5NWVhZjg1N2QiLCJlbWFpbCI6InR0djFAdHR2MS5jb20iLCJpYXQiOjE2NTU1NzgxODcsImV4cCI6MTY1NTY2NDU4N30.q1uBPXJWgf10NtIGfmVr35j6-NzHF0ZklQTpOVQmgTA",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/recipes/f3738c62-cc2c-492d-99dc-cb9b505a65af",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"recipes",
+								"f3738c62-cc2c-492d-99dc-cb9b505a65af"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "fetch-recipes",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJjODgyNGRhMy04ZDBlLTRhZjEtYWJmNC04YTY5NWVhZjg1N2QiLCJlbWFpbCI6InR0djFAdHR2MS5jb20iLCJpYXQiOjE2NTU1NzgxODcsImV4cCI6MTY1NTY2NDU4N30.q1uBPXJWgf10NtIGfmVr35j6-NzHF0ZklQTpOVQmgTA",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/recipes",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"recipes"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "medications",
+			"item": [
+				{
+					"name": "__default",
+					"item": [
+						{
+							"name": "fetch-medication",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJjODgyNGRhMy04ZDBlLTRhZjEtYWJmNC04YTY5NWVhZjg1N2QiLCJlbWFpbCI6InR0djFAdHR2MS5jb20iLCJpYXQiOjE2NTU1NzgxODcsImV4cCI6MTY1NTY2NDU4N30.q1uBPXJWgf10NtIGfmVr35j6-NzHF0ZklQTpOVQmgTA",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "localhost:3000/medications/34d89ed7-1a45-42d8-bc8b-c9a92066a40e",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"medications",
+										"34d89ed7-1a45-42d8-bc8b-c9a92066a40e"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "fetch-medications",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJjODgyNGRhMy04ZDBlLTRhZjEtYWJmNC04YTY5NWVhZjg1N2QiLCJlbWFpbCI6InR0djFAdHR2MS5jb20iLCJpYXQiOjE2NTU1NzgxODcsImV4cCI6MTY1NTY2NDU4N30.q1uBPXJWgf10NtIGfmVr35j6-NzHF0ZklQTpOVQmgTA",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "localhost:3000/medications",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"medications"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "create-medication",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJjODgyNGRhMy04ZDBlLTRhZjEtYWJmNC04YTY5NWVhZjg1N2QiLCJlbWFpbCI6InR0djFAdHR2MS5jb20iLCJpYXQiOjE2NTU1NzgxODcsImV4cCI6MTY1NTY2NDU4N30.q1uBPXJWgf10NtIGfmVr35j6-NzHF0ZklQTpOVQmgTA",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"signature\": \"BRF\",\r\n    \"alias\": \"Bruffen\",\r\n    \"basePrice\": 0.50\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/medications",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"medications"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "citizen",
+			"item": [
+				{
+					"name": "__default",
+					"item": [
+						{
+							"name": "fetch-citizen",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJjODgyNGRhMy04ZDBlLTRhZjEtYWJmNC04YTY5NWVhZjg1N2QiLCJlbWFpbCI6InR0djFAdHR2MS5jb20iLCJpYXQiOjE2NTU1NzgxODcsImV4cCI6MTY1NTY2NDU4N30.q1uBPXJWgf10NtIGfmVr35j6-NzHF0ZklQTpOVQmgTA",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "localhost:3000/citizens/f3738c62-cc2c-492d-99dc-cb9b505a65af",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"citizens",
+										"f3738c62-cc2c-492d-99dc-cb9b505a65af"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "fetch-citizens",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJjODgyNGRhMy04ZDBlLTRhZjEtYWJmNC04YTY5NWVhZjg1N2QiLCJlbWFpbCI6InR0djFAdHR2MS5jb20iLCJpYXQiOjE2NTU1NzgxODcsImV4cCI6MTY1NTY2NDU4N30.q1uBPXJWgf10NtIGfmVr35j6-NzHF0ZklQTpOVQmgTA",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "localhost:3000/citizens",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"citizens"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "create-citizen",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJjODgyNGRhMy04ZDBlLTRhZjEtYWJmNC04YTY5NWVhZjg1N2QiLCJlbWFpbCI6InR0djFAdHR2MS5jb20iLCJpYXQiOjE2NTU1NzgxODcsImV4cCI6MTY1NTY2NDU4N30.q1uBPXJWgf10NtIGfmVr35j6-NzHF0ZklQTpOVQmgTA",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"socialSecurityId\": \"ttv1\",\r\n    \"healthSecurityId\": \"ttv1\",\r\n    \"name\": \"ttv1\",\r\n    \"dateOfBirth\": \"16/01/1997\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/citizens",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"citizens"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}
