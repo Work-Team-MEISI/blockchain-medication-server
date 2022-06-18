@@ -15,5 +15,5 @@ export class CreateCitizenDTO {
 
     @IsNotEmpty()
     @IsString()
-    public readonly dateOfBirth: string;
+    public dateOfBirth: string;
 }

@@ -42,7 +42,7 @@ model CitizenEntity {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
-  socialSecuriyId  String @unique
+  socialSecurityId  String @unique
   healthSecurityId String @unique
   name             String
   dateOfBirth      String

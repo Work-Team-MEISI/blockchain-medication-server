@@ -8,7 +8,7 @@ import { CreateCitizenDTO } from './dtos/create-citizen.dto';
 import { FetchCitizenDTO } from './dtos/fetch-citizen.dto';
 import { CitizenService } from './services/citizen.service';
 
-@Controller(`${PublicRoute.CITIZATIONS}`)
+@Controller(`${PublicRoute.CITIZENS}`)
 export class CitizenController {
     public constructor(
         private readonly _citizenService: CitizenService<CitizenModel>,
@@ -36,9 +36,9 @@ export class CitizenController {
     @UseGuards(AccessTokenGuard)
     @Get("/:id")
     public async listCitizen(
-        @Param("id") fetchCitizenDTO: FetchCitizenDTO,
+        @Param("id") citizenId: string,
     ): Promise<FetchResponseModel<CitizenModel>> {
-        const citizen = await this._citizenService.fetchOne({ userId: fetchCitizenDTO.citizenId }).catch((error) => {
+        const citizen = await this._citizenService.fetchOne({ citizenId: citizenId }).catch((error) => {
             throw new InternalServerErrorException(error);
         });
 
@@ -55,6 +55,7 @@ export class CitizenController {
         const citizen = await this._citizenService.fetchOne({ socialSecurityId: createcitizenDTO.socialSecurityId }).catch((error) => {
             throw new InternalServerErrorException(error);
         });
+        
 
         if (citizen !== null && citizen !== undefined) {
             throw new ConflictException();

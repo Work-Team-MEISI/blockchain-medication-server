@@ -36,9 +36,9 @@ export class MedicationController {
     @UseGuards(AccessTokenGuard)
     @Get("/:id")
     public async listMedication(
-        @Param("id") medicationId: FetchMedicationDTO,
+        @Param("id") medicationId: string,
     ): Promise<FetchResponseModel<MedicationModel>> {
-        const medication = await this._medicationService.fetchOne({ userId: medicationId.medicationId }).catch((error) => {
+        const medication = await this._medicationService.fetchOne({ medicationId: medicationId }).catch((error) => {
             throw new InternalServerErrorException(error);
         });
 
